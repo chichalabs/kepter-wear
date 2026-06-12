@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { withBase } from "@/lib/img";
 
 export function ProductGallery({
   images,
@@ -18,7 +19,7 @@ export function ProductGallery({
     <div>
       <div className="relative aspect-[6/7] w-full overflow-hidden border border-line bg-ink-2">
         <Image
-          src={images[active]}
+          src={withBase(images[active])}
           alt={`${alt}, ${labels[active] ?? ""}`}
           fill
           priority
@@ -38,7 +39,7 @@ export function ProductGallery({
                 i === active ? "border-accent" : "border-line hover:border-muted"
               }`}
             >
-              <Image src={src} alt={labels[i] ?? alt} fill sizes="80px" className="object-cover" />
+              <Image src={withBase(src)} alt={labels[i] ?? alt} fill sizes="80px" className="object-cover" />
             </button>
           ))}
         </div>

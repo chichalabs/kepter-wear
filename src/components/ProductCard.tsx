@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Locale, Product } from "@/types";
 import { formatKZT } from "@/lib/format";
+import { withBase } from "@/lib/img";
 
 export function ProductCard({
   product,
@@ -17,7 +18,7 @@ export function ProductCard({
     >
       <div className="relative aspect-[6/7] overflow-hidden">
         <Image
-          src={product.images[0]}
+          src={withBase(product.images[0])}
           alt={product.name[locale]}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

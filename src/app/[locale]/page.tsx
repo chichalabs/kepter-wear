@@ -6,6 +6,7 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import { products } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
 import { OrnamentCurl } from "@/components/Ornament";
+import { withBase } from "@/lib/img";
 
 export default async function HomePage({
   params,
@@ -42,7 +43,7 @@ export default async function HomePage({
           </div>
           <div className="relative mx-auto aspect-[6/7] w-full max-w-105 lg:max-w-none">
             <Image
-              src={featured.images[0]}
+              src={withBase(featured.images[0])}
               alt={featured.name[locale]}
               fill
               priority

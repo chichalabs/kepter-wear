@@ -6,6 +6,7 @@ import { Minus, Plus, X } from "@phosphor-icons/react";
 import { useCart } from "@/lib/cart";
 import { getProduct } from "@/lib/products";
 import { formatKZT } from "@/lib/format";
+import { withBase } from "@/lib/img";
 import type { Dictionary } from "@/lib/i18n/types";
 import type { Locale } from "@/types";
 
@@ -53,7 +54,7 @@ export function CartView({ locale, dict }: { locale: Locale; dict: Dictionary })
                 className="relative block aspect-[6/7] w-20 shrink-0 overflow-hidden border border-line"
               >
                 <Image
-                  src={product.images[0]}
+                  src={withBase(product.images[0])}
                   alt={product.name[locale]}
                   fill
                   sizes="80px"

@@ -1,0 +1,55 @@
+name: Deploy demo to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Static demo: API routes and payment pages need a server, drop them
+      - run: rm -rf src/app/api "src/app/[locale]/payment"
+      - run: npm run build
+        env:
+          GH_PAGES: "1"
+          NEXT_PUBLIC_BASE_PATH: /kepter-wear
+      - name: Add root redirect and .nojekyll
+        run: |
+          touch out/.nojekyll
+          cat > out/index.html <<'EOF'
+          <!doctype html>
+          <meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=./ru/">
+          <link rel="canonical" href="./ru/">
+          <title>Kepter Wear</title>
+          EOF
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
