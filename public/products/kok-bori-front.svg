@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700">
+  <rect width="600" height="700" fill="#232323"/>
+  <rect width="600" height="700" fill="url(#vign)"/>
+  <defs>
+    <radialGradient id="vign" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#2c2c2c"/><stop offset="100%" stop-color="#1c1c1c"/>
+    </radialGradient>
+  </defs>
+  <g>
+    <path d="M210 150 L150 190 L110 300 L175 330 L185 270 L185 580 q115 28 230 0 L415 270 L425 330 L490 300 L450 190 L390 150 q-40 28 -90 28 q-50 0 -90 -28 z"
+      fill="#1d1d1d" stroke="#2a2a2a" stroke-width="3"/>
+    <path d="M236 158 q64 44 128 0 q-14 34 -64 34 q-50 0 -64 -34 z" fill="#141414"/>
+    <path d="M185 330 q-4 120 0 250 M415 330 q4 120 0 250" stroke="#2a2a2a" stroke-width="2" fill="none"/>
+    
+    <g stroke="#2bbbb0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M240 380 q5 -60 50 -82 l-10 -34 34 22 q30 -8 52 8 q24 18 22 48 q-2 34 -34 46 q-50 18 -114 -8 z"/>
+      <circle cx="352" cy="320" r="4" fill="#2bbbb0" stroke="none"/>
+    </g>
+  </g>
+</svg>

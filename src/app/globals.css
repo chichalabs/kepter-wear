@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+/*
+  Kepter Wear design tokens. Single locked dark theme (brand decision):
+  off-black ink base, bone text, one steppe-turquoise accent.
+  Radius system: sharp (0) everywhere; interactive elements use 2px.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #161616;
+  --ink-2: #1d1d1d;
+  --ink-3: #242424;
+  --line: #2c2c2c;
+  --bone: #ece9e2;
+  --muted: #9b978f;
+  --accent: #2bbbb0;
+  --accent-press: #239e95;
+  --danger: #d96a5b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-bone: var(--bone);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-press: var(--accent-press);
+  --color-danger: var(--danger);
+  --font-display: var(--font-unbounded);
+  --font-sans: var(--font-manrope);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

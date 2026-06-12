@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kepter Wear
 
-## Getting Started
+Storefront for a Kazakhstani streetwear brand: product grid, cart, checkout, and card payment via [Robokassa.kz](https://robokassa.kz). Built with Next.js (App Router), Tailwind CSS v4, and Supabase Postgres. Trilingual: Russian (default), Kazakh, English.
 
-First, run the development server:
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.local.example .env.local   # fill in the values below
+npm run dev                        # http://localhost:3000 -> redirects to /ru
+npm test                           # Robokassa signature unit tests
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The catalog (products, prices, texts) lives in `src/lib/products.ts`. Product images live in `public/products/`; replace the placeholder SVGs with real photos using the same file names (or edit the `images` paths in the catalog).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup checklist
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Supabase (orders database)
 
-## Learn More
+1. Create a free project at [supabase.com](https://supabase.com).
+2. In the SQL editor, run `supabase/schema.sql` once.
+3. Copy Settings -> API values into `.env.local`:
+   - `SUPABASE_URL` = Project URL
+   - `SUPABASE_SERVICE_ROLE_KEY` = service_role key (server-only; never expose it to the client)
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Robokassa.kz (payments)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Register a shop at [robokassa.kz](https://robokassa.kz) and open Technical Settings.
+2. Copy into `.env.local`: `ROBOKASSA_MERCHANT_LOGIN`, `ROBOKASSA_PASSWORD1`, `ROBOKASSA_PASSWORD2`.
+   While `ROBOKASSA_IS_TEST=1`, use the **test** passwords (they are configured separately).
+3. In the cabinet, set the URLs (method POST for Result URL):
+   - Result URL: `https://your-domain/api/robokassa/result`
+   - Success URL: `https://your-domain/ru/payment/success`
+   - Fail URL: `https://your-domain/ru/payment/fail`
+4. Hash algorithm must be MD5 (the default).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To test the callback locally, expose the dev server with a tunnel
+(`cloudflared tunnel --url http://localhost:3000` or ngrok) and put the tunnel
+URL into the cabinet as the Result URL.
 
-## Deploy on Vercel
+### 3. Deploy (Vercel)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push the repo to GitHub and import it in Vercel.
+2. Add all `.env.local` variables in Project Settings -> Environment Variables; set `NEXT_PUBLIC_SITE_URL` to the production URL.
+3. After going live, switch `ROBOKASSA_IS_TEST` to `0` and replace test passwords with production ones.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How payment works
+
+1. `POST /api/orders` validates the cart, recomputes the total from `src/lib/products.ts` (client prices are never trusted), inserts a `pending` order in Supabase, and returns a signed Robokassa payment URL (`MD5(MerchantLogin:OutSum:InvId:Password#1)`).
+2. The customer pays on Robokassa. Robokassa calls `/api/robokassa/result`; the handler verifies `MD5(OutSum:InvId:Password#2)` and the amount, marks the order `paid`, and answers `OK{InvId}`. This callback is the only thing that confirms payment.
+3. The customer is redirected to the success page, which verifies the Password#1 redirect signature and shows "paid" or "processing" based on the database status.

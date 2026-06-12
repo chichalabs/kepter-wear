@@ -1,0 +1,88 @@
+import type { Dictionary } from "./types";
+
+export const en: Dictionary = {
+  brand: "Kepter Wear",
+  nav: {
+    catalog: "Catalog",
+    cart: "Cart",
+  },
+  hero: {
+    eyebrow: "Steppe. City. You.",
+    title: "T-shirts with a Kazakh code",
+    subtitle: "Modern streetwear built on the ornaments and myths of the Great Steppe. Printed in Almaty.",
+    cta: "Browse the catalog",
+  },
+  catalog: {
+    title: "Catalog",
+    from: "from",
+  },
+  product: {
+    size: "Size",
+    addToCart: "Add to cart",
+    added: "Added",
+    motifLabel: "About the symbol",
+    front: "Front",
+    back: "Back",
+    notFound: "Product not found",
+    backToCatalog: "Back to catalog",
+  },
+  cart: {
+    title: "Cart",
+    empty: "Your cart is empty",
+    emptyHint: "The whole collection lives in the catalog.",
+    goToCatalog: "Go to catalog",
+    size: "Size",
+    qty: "Qty",
+    remove: "Remove",
+    total: "Total",
+    checkout: "Checkout",
+  },
+  checkout: {
+    title: "Checkout",
+    contactInfo: "Contact and delivery",
+    name: "Full name",
+    phone: "Phone",
+    email: "Email",
+    city: "City",
+    address: "Delivery address",
+    addressHint: "Street, building, apartment",
+    orderSummary: "Your order",
+    total: "Total",
+    pay: "Proceed to payment",
+    paying: "Creating your order...",
+    payNote: "Card payment via Robokassa. You will be taken to a secure payment page.",
+    errors: {
+      required: "This field is required",
+      email: "Check your email",
+      phone: "Check your phone number",
+      generic: "Could not create the order. Please try again.",
+    },
+  },
+  payment: {
+    successTitle: "Payment received",
+    successBody: "Thank you for your order! We will contact you to confirm delivery.",
+    processingTitle: "Payment processing",
+    processingBody: "The bank is still confirming your payment. Refresh this page in a minute.",
+    failTitle: "Payment failed",
+    failBody: "You were not charged. You can return to your cart and try again.",
+    orderNumber: "Order #",
+    backHome: "Back to home",
+    backToCart: "Back to cart",
+    invalidTitle: "Something went wrong",
+    invalidBody: "We could not verify the payment parameters. If you were charged, please contact us.",
+  },
+  footer: {
+    tagline: "Kazakh streetwear. Made in Almaty.",
+    contacts: "Contact us",
+  },
+  notFound: {
+    title: "This page does not exist",
+    body: "The catalog with the new collection does, though.",
+    cta: "Go to catalog",
+  },
+  meta: {
+    title: "Kepter Wear: Kazakh streetwear",
+    description:
+      "T-shirts with modern designs built on Kazakh ornaments and myths. Delivery across Kazakhstan, card payment.",
+  },
+};
