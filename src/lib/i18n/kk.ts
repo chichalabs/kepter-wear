@@ -10,7 +10,6 @@ export const kk: Dictionary = {
   },
   header: {
     promo: "Қазақстан бойынша жеткізу. Картамен төлеу.",
-    signIn: "Кіру",
     search: "Іздеу",
   },
   home: {

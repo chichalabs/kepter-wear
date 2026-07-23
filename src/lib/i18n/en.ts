@@ -10,7 +10,6 @@ export const en: Dictionary = {
   },
   header: {
     promo: "Delivery across Kazakhstan. Card payment.",
-    signIn: "Sign In",
     search: "Search",
   },
   home: {

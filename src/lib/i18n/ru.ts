@@ -8,7 +8,6 @@ export const ru = {
   },
   header: {
     promo: "Доставка по всему Казахстану. Оплата картой.",
-    signIn: "Войти",
     search: "Поиск",
   },
   home: {

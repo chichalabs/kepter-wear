@@ -26,15 +26,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <p className="absolute left-1/2 hidden -translate-x-1/2 text-[13px] font-bold uppercase tracking-[0.025em] lg:block">
             {dict.header.promo}
           </p>
-          <div className="flex items-center gap-4 sm:gap-6">
-            <Link
-              href="#"
-              className="text-[13px] font-bold uppercase tracking-[0.025em] hover:underline"
-            >
-              {dict.header.signIn}
-            </Link>
-            <CartButton locale={locale} label={dict.nav.cart} />
-          </div>
+          <CartButton locale={locale} label={dict.nav.cart} />
         </div>
       </div>
 
