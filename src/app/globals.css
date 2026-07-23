@@ -1,20 +1,29 @@
 @import "tailwindcss";
 
 /*
-  Kepter Wear design tokens. Single locked dark theme (brand decision):
-  off-black ink base, bone text, one steppe-turquoise accent.
-  Radius system: sharp (0) everywhere; interactive elements use 2px.
+  Kepter Wear design tokens, cloned from hufworldwide.com theme CSS.
+  Exact values lifted from huf_css_huf_styles.css:
+    text/buttons #000, page #fff, product tile #f0f0f0, hairlines #e4e4e4,
+    muted #909090/#6a6a6a, HUF green #94c93d (labels, flags, hovers).
+  Token names kept from the dark era so components stay untouched:
+    --ink    = page background
+    --ink-2  = product tile / panel grey
+    --ink-3  = deeper grey
+    --line   = hairline borders
+    --bone   = primary text
+  Radius: HUF is fully square (border-radius 0 everywhere).
 */
 :root {
-  --ink: #161616;
-  --ink-2: #1d1d1d;
-  --ink-3: #242424;
-  --line: #2c2c2c;
-  --bone: #ece9e2;
-  --muted: #9b978f;
-  --accent: #2bbbb0;
-  --accent-press: #239e95;
-  --danger: #d96a5b;
+  --ink: #ffffff;
+  --ink-2: #f0f0f0;
+  --ink-3: #e5e5e5;
+  --line: #e4e4e4;
+  --bone: #000000;
+  --muted: #909090;
+  --accent: #000000;
+  --accent-press: #333333;
+  --green: #94c93d;
+  --danger: #c0392b;
 }
 
 @theme inline {
@@ -26,20 +35,55 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-press: var(--accent-press);
+  --color-green: var(--green);
   --color-danger: var(--danger);
-  --font-display: var(--font-unbounded);
-  --font-sans: var(--font-manrope);
+  --font-display: var(--font-overpass);
+  --font-sans: var(--font-overpass);
 }
 
 body {
   background: var(--ink);
   color: var(--bone);
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--font-overpass), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: var(--accent);
+  background: var(--bone);
   color: var(--ink);
+}
+
+/*
+  HUF .cta-link, verbatim: 2px black border, black fill, white 16px
+  semibold uppercase, min-width 216px; hover inverts to white/black.
+*/
+@layer components {
+  .btn {
+    display: inline-block;
+    padding: 13px 15px;
+    min-width: 216px;
+    border: 2px solid var(--bone);
+    background-color: var(--bone);
+    color: var(--ink);
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    text-align: center;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .btn:hover {
+    background-color: var(--ink);
+    color: var(--bone);
+  }
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

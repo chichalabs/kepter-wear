@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { OrnamentDivider } from "@/components/Ornament";
 
 // Locale isn't available in not-found; show all three languages briefly.
 export default function NotFound() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6">
-      <OrnamentDivider />
       <h1 className="mt-6 font-display text-3xl font-extrabold uppercase tracking-tight">
         404
       </h1>
@@ -14,7 +12,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/ru"
-        className="mt-8 inline-block rounded-[2px] bg-accent px-7 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent-press"
+        className="mt-8 inline-block btn"
       >
         Kepter Wear
       </Link>

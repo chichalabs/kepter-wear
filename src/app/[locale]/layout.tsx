@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Unbounded, Manrope } from "next/font/google";
+import { Overpass } from "next/font/google";
 import { locales, isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { CartProvider } from "@/lib/cart";
@@ -8,17 +8,12 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "../globals.css";
 
+// Overpass = the typeface HUF self-hosts as "HufOverpass" (weights 400-900).
 // cyrillic-ext is required for Kazakh glyphs (ә ғ қ ң ө ұ ү һ і)
-const unbounded = Unbounded({
+const overpass = Overpass({
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
-  variable: "--font-unbounded",
-  weight: ["400", "600", "800"],
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin", "cyrillic", "cyrillic-ext"],
-  variable: "--font-manrope",
+  variable: "--font-overpass",
+  weight: ["400", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -64,7 +59,7 @@ export default async function LocaleLayout({
   const dict = getDictionary(locale);
 
   return (
-    <html lang={locale} className={`${unbounded.variable} ${manrope.variable}`}>
+    <html lang={locale} className={overpass.variable}>
       <body className="flex min-h-[100dvh] flex-col antialiased">
         <CartProvider>
           <Header locale={locale} dict={dict} />

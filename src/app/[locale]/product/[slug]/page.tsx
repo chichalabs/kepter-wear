@@ -7,7 +7,6 @@ import { products, getProduct } from "@/lib/products";
 import { formatKZT } from "@/lib/format";
 import { ProductGallery } from "@/components/ProductGallery";
 import { AddToCart } from "@/components/AddToCart";
-import { OrnamentDivider } from "@/components/Ornament";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
@@ -72,13 +71,6 @@ export default async function ProductPage({
               addLabel={dict.product.addToCart}
               addedLabel={dict.product.added}
             />
-          </div>
-          <div className="mt-10 border-t border-line pt-6">
-            <OrnamentDivider />
-            <p className="mt-3 text-sm text-muted">{dict.product.motifLabel}</p>
-            <p className="mt-1 max-w-[55ch] text-sm leading-relaxed text-bone">
-              {product.motif[locale]}
-            </p>
           </div>
         </div>
       </div>

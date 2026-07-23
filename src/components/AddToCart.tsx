@@ -50,7 +50,7 @@ export function AddToCart({
       <button
         type="button"
         onClick={handleAdd}
-        className="mt-6 flex w-full items-center justify-center gap-2 rounded-[2px] bg-accent px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent-press active:translate-y-px sm:w-auto sm:min-w-56"
+        className="mt-6 flex w-full items-center justify-center gap-2 btn active:translate-y-px sm:w-auto sm:min-w-56"
       >
         {justAdded ? (
           <>

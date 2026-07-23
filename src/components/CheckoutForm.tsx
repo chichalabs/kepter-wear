@@ -37,7 +37,7 @@ export function CheckoutForm({ locale, dict }: { locale: Locale; dict: Dictionar
         </p>
         <Link
           href={`/${locale}#catalog`}
-          className="mt-6 inline-block rounded-[2px] bg-accent px-7 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent-press"
+          className="mt-6 inline-block btn"
         >
           {dict.cart.goToCatalog}
         </Link>
@@ -142,7 +142,7 @@ export function CheckoutForm({ locale, dict }: { locale: Locale; dict: Dictionar
         <button
           type="submit"
           disabled={submitting}
-          className="mt-7 w-full rounded-[2px] bg-accent px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent-press active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="mt-7 w-full btn active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {submitting ? dict.checkout.paying : dict.checkout.pay}
         </button>

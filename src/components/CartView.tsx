@@ -33,7 +33,7 @@ export function CartView({ locale, dict }: { locale: Locale; dict: Dictionary })
         <p className="mt-2 text-sm text-muted">{dict.cart.emptyHint}</p>
         <Link
           href={`/${locale}#catalog`}
-          className="mt-6 inline-block rounded-[2px] bg-accent px-7 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent-press"
+          className="mt-6 inline-block btn"
         >
           {dict.cart.goToCatalog}
         </Link>
@@ -66,7 +66,7 @@ export function CartView({ locale, dict }: { locale: Locale; dict: Dictionary })
                   <div>
                     <Link
                       href={`/${locale}/product/${product.slug}`}
-                      className="font-display text-sm font-semibold uppercase tracking-wide transition-colors hover:text-accent"
+                      className="font-display text-sm font-semibold uppercase tracking-wide transition-opacity hover:opacity-60"
                     >
                       {product.name[locale]}
                     </Link>
@@ -121,7 +121,7 @@ export function CartView({ locale, dict }: { locale: Locale; dict: Dictionary })
         </p>
         <Link
           href={`/${locale}/checkout`}
-          className="rounded-[2px] bg-accent px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent-press active:translate-y-px"
+          className="btn active:translate-y-px"
         >
           {dict.cart.checkout}
         </Link>

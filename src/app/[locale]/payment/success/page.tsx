@@ -5,7 +5,6 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import { verifySuccessRedirect, extractCallbackParams } from "@/lib/robokassa";
 import { getSupabase } from "@/lib/supabase";
 import { ClearCart } from "@/components/ClearCart";
-import { OrnamentDivider } from "@/components/Ornament";
 
 export const dynamic = "force-dynamic";
 
@@ -91,7 +90,6 @@ function Shell({
   return (
     <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6">
       {children}
-      <OrnamentDivider />
       <h1 className="mt-6 font-display text-3xl font-extrabold uppercase tracking-tight">
         {title}
       </h1>
@@ -99,7 +97,7 @@ function Shell({
       <p className="mt-4 max-w-[50ch] leading-relaxed text-muted">{body}</p>
       <Link
         href={linkHref}
-        className="mt-8 inline-block rounded-[2px] bg-accent px-7 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent-press"
+        className="mt-8 inline-block btn"
       >
         {linkLabel}
       </Link>

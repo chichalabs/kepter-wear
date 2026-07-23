@@ -4,13 +4,22 @@ export const kk: Dictionary = {
   brand: "Kepter Wear",
   nav: {
     catalog: "Каталог",
+    shop: "Дүкен",
+    lookbook: "Лукбук",
     cart: "Себет",
   },
-  hero: {
-    eyebrow: "Дала. Қала. Сен.",
-    title: "Қазақ кодты футболкалар",
-    subtitle: "Ұлы дала өрнектері мен аңыздарына негізделген заманауи стритвир. Алматыда басамыз.",
-    cta: "Каталогты көру",
+  header: {
+    promo: "Қазақстан бойынша жеткізу. Картамен төлеу.",
+    signIn: "Кіру",
+    search: "Іздеу",
+  },
+  home: {
+    collection: "Kepter '26",
+    seeAll: "Барлығын көру",
+  },
+  lookbook: {
+    title: "Лукбук",
+    subtitle: "Kepter '26. Алматыда түсірілген.",
   },
   catalog: {
     title: "Каталог",
@@ -20,7 +29,6 @@ export const kk: Dictionary = {
     size: "Өлшем",
     addToCart: "Себетке салу",
     added: "Салынды",
-    motifLabel: "Бұл қандай символ",
     front: "Алды",
     back: "Арты",
     notFound: "Тауар табылмады",
@@ -72,7 +80,7 @@ export const kk: Dictionary = {
     invalidBody: "Төлем параметрлерін растау мүмкін болмады. Ақша шешілсе, бізге жазыңыз.",
   },
   footer: {
-    tagline: "Қазақ стритвирі. Алматыда жасалған.",
+    tagline: "Kepter. Алматыдан шыққан стритвир.",
     contacts: "Байланысу",
   },
   notFound: {
@@ -81,8 +89,8 @@ export const kk: Dictionary = {
     cta: "Каталогқа өту",
   },
   meta: {
-    title: "Kepter Wear: қазақ стритвирі",
+    title: "Kepter Wear: Алматы стритвирі",
     description:
-      "Қазақ өрнектері мен аңыздарына негізделген заманауи дизайнды футболкалар. Қазақстан бойынша жеткізу, картамен төлеу.",
+      "Kepter футболкалары, худилері мен свитшоттары. Қазақстан бойынша жеткізу, картамен төлеу.",
   },
 };

@@ -17,7 +17,6 @@ export interface Product {
   /** Price in KZT, whole tenge */
   price: number;
   images: string[];
-  motif: LocalizedText;
 }
 
 export interface CartItem {

@@ -4,13 +4,22 @@ export const en: Dictionary = {
   brand: "Kepter Wear",
   nav: {
     catalog: "Catalog",
+    shop: "Shop",
+    lookbook: "Lookbook",
     cart: "Cart",
   },
-  hero: {
-    eyebrow: "Steppe. City. You.",
-    title: "T-shirts with a Kazakh code",
-    subtitle: "Modern streetwear built on the ornaments and myths of the Great Steppe. Printed in Almaty.",
-    cta: "Browse the catalog",
+  header: {
+    promo: "Delivery across Kazakhstan. Card payment.",
+    signIn: "Sign In",
+    search: "Search",
+  },
+  home: {
+    collection: "Kepter '26",
+    seeAll: "See All",
+  },
+  lookbook: {
+    title: "Lookbook",
+    subtitle: "Kepter '26. Shot in Almaty.",
   },
   catalog: {
     title: "Catalog",
@@ -20,7 +29,6 @@ export const en: Dictionary = {
     size: "Size",
     addToCart: "Add to cart",
     added: "Added",
-    motifLabel: "About the symbol",
     front: "Front",
     back: "Back",
     notFound: "Product not found",
@@ -72,7 +80,7 @@ export const en: Dictionary = {
     invalidBody: "We could not verify the payment parameters. If you were charged, please contact us.",
   },
   footer: {
-    tagline: "Kazakh streetwear. Made in Almaty.",
+    tagline: "Kepter. Streetwear from Almaty.",
     contacts: "Contact us",
   },
   notFound: {
@@ -81,8 +89,8 @@ export const en: Dictionary = {
     cta: "Go to catalog",
   },
   meta: {
-    title: "Kepter Wear: Kazakh streetwear",
+    title: "Kepter Wear: streetwear from Almaty",
     description:
-      "T-shirts with modern designs built on Kazakh ornaments and myths. Delivery across Kazakhstan, card payment.",
+      "Kepter tees, hoodies and crewnecks. Delivery across Kazakhstan, card payment.",
   },
 };
