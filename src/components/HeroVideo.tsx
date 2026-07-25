@@ -11,7 +11,7 @@ import { withBase } from "@/lib/img";
  * Until they exist we fall back to placeholder photography so the page
  * never renders a black hole.
  */
-const FALLBACK = "https://picsum.photos/seed/kepter-dala-campaign/1800/760";
+const FALLBACK = "/lookbook/skate.jpg";
 
 export function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -39,7 +39,7 @@ export function HeroVideo() {
         {failed ? (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
-            src={FALLBACK}
+            src={withBase(FALLBACK)}
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
           />
