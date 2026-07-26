@@ -60,14 +60,14 @@ export const infoPages: InfoPage[] = [
         ),
         body: [
           t(
-            "По остальному Казахстану отправляем Казпочтой до отделения, почтомата или адреса. Сроки Казпочты: между городами 3-6 рабочих дней наземной доставкой, авиадоставка от 1 дня; в отдалённые населённые пункты дольше. После отправки пришлём трек-номер для отслеживания на post.kz.",
-            "Қазақстанның басқа өңірлеріне Қазпошта арқылы бөлімшеге, почтоматқа немесе мекенжайға жібереміз. Қазпошта мерзімдері: қалалар арасында жердегі жеткізумен 3-6 жұмыс күні, әуе жеткізуі 1 күннен басталады; шалғай елді мекендерге ұзағырақ. Жібергеннен кейін post.kz сайтында қадағалау үшін трек-нөмір жібереміз.",
-            "To the rest of Kazakhstan we ship via Kazpost to a post office, parcel locker or address. Kazpost timing: 3-6 business days between cities by ground, air delivery from 1 day; remote settlements take longer. After dispatch we send a tracking number for post.kz."
+            "По остальному Казахстану отправляем Казпочтой до ближайшего отделения или почтомата. Срок: обычно 4-6 рабочих дней между крупными городами, в отдалённые регионы до 10-12 рабочих дней. После отправки пришлём трек-номер для отслеживания на post.kz.",
+            "Қазақстанның басқа өңірлеріне Қазпошта арқылы жақын бөлімшеге немесе почтоматқа жібереміз. Мерзімі: ірі қалалар арасында әдетте 4-6 жұмыс күні, шалғай өңірлерге 10-12 жұмыс күніне дейін. Жібергеннен кейін post.kz сайтында қадағалау үшін трек-нөмір жібереміз.",
+            "To the rest of Kazakhstan we ship via Kazpost to the nearest post office or parcel locker. Timing: usually 4-6 business days between major cities, up to 10-12 business days to remote regions. After dispatch we send a tracking number for post.kz."
           ),
           t(
-            "Стоимость доставки — по тарифам Казпочты: зависит от веса посылки, города и способа получения. Ориентировочную сумму можно посчитать в калькуляторе на post.kz, точную сообщим при подтверждении заказа.",
-            "Жеткізу құны — Қазпошта тарифтері бойынша: сәлемдеменің салмағына, қалаға және алу тәсіліне байланысты. Болжалды соманы post.kz сайтындағы калькулятормен есептеуге болады, нақтысын тапсырысты растаған кезде хабарлаймыз.",
-            "Delivery cost follows Kazpost tariffs: it depends on parcel weight, city and pickup method. You can estimate it with the calculator on post.kz; we confirm the exact amount with your order."
+            "Стоимость доставки Казпочтой — ориентировочно 1 700-3 000 ₸ в зависимости от региона, по тарифам Казпочты. Точную сумму сообщим при подтверждении заказа.",
+            "Қазпошта жеткізу құны — өңірге байланысты шамамен 1 700-3 000 ₸, Қазпошта тарифтері бойынша. Нақты соманы тапсырысты растаған кезде хабарлаймыз.",
+            "Kazpost delivery costs roughly 1,700-3,000 ₸ depending on the region, per Kazpost tariffs. We confirm the exact amount with your order."
           ),
         ],
       },
