@@ -12,16 +12,23 @@ export function AddToCart({
   sizeLabel,
   addLabel,
   addedLabel,
+  inCartLabel,
 }: {
   productId: string;
   sizeLabel: string;
   addLabel: string;
   addedLabel: string;
+  inCartLabel: string;
 }) {
-  const { add } = useCart();
+  const { add, items, hydrated } = useCart();
   const [size, setSize] = useState<Size>("M");
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
+
+  function inCart(s: Size): number {
+    return items.find((i) => i.productId === productId && i.size === s)?.qty ?? 0;
+  }
+  const inCartSelected = hydrated ? inCart(size) : 0;
 
   function handleAdd() {
     add(productId, size, qty);
@@ -33,22 +40,33 @@ export function AddToCart({
     <div>
       <p className="text-sm text-muted">{sizeLabel}</p>
       <div className="mt-2 flex flex-wrap gap-2" role="radiogroup" aria-label={sizeLabel}>
-        {SIZES.map((s) => (
-          <button
-            key={s}
-            type="button"
-            role="radio"
-            aria-checked={s === size}
-            onClick={() => setSize(s)}
-            className={`min-w-12 rounded-[2px] border px-3 py-2 text-sm font-semibold transition-colors ${
-              s === size
-                ? "border-accent bg-accent text-ink"
-                : "border-line text-bone hover:border-muted"
-            }`}
-          >
-            {s}
-          </button>
-        ))}
+        {SIZES.map((s) => {
+          const n = hydrated ? inCart(s) : 0;
+          return (
+            <button
+              key={s}
+              type="button"
+              role="radio"
+              aria-checked={s === size}
+              onClick={() => setSize(s)}
+              className={`relative min-w-12 rounded-[2px] border px-3 py-2 text-sm font-semibold transition-colors ${
+                s === size
+                  ? "border-accent bg-accent text-ink"
+                  : "border-line text-bone hover:border-muted"
+              }`}
+            >
+              {s}
+              {n > 0 && (
+                <span
+                  aria-label={`${inCartLabel}: ${n}`}
+                  className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center bg-green px-1 text-[10px] font-bold text-ink"
+                >
+                  {n}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-stretch">
         <div className="flex h-[50px] w-fit items-center border-2 border-bone">
@@ -88,6 +106,11 @@ export function AddToCart({
           )}
         </button>
       </div>
+      {inCartSelected > 0 && (
+        <p className="mt-3 text-sm text-muted">
+          {inCartLabel} ({size}): {inCartSelected}
+        </p>
+      )}
     </div>
   );
 }

@@ -70,6 +70,7 @@ export default async function ProductPage({
               sizeLabel={dict.product.size}
               addLabel={dict.product.addToCart}
               addedLabel={dict.product.added}
+              inCartLabel={dict.product.inCart}
             />
           </div>
         </div>

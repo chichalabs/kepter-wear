@@ -26,6 +26,7 @@ export const ru = {
     size: "Размер",
     addToCart: "В корзину",
     added: "Добавлено",
+    inCart: "В корзине",
     front: "Спереди",
     back: "Сзади",
     notFound: "Товар не найден",

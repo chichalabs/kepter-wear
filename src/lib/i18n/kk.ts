@@ -28,6 +28,7 @@ export const kk: Dictionary = {
     size: "Өлшем",
     addToCart: "Себетке салу",
     added: "Салынды",
+    inCart: "Себетте",
     front: "Алды",
     back: "Арты",
     notFound: "Тауар табылмады",
