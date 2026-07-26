@@ -17,9 +17,9 @@ export const en: Dictionary = {
     seeAll: "See All",
     info: {
       title: "How to order",
-      step1: "Build your cart: size, quantity, delivery address",
-      step2: "Pay by card on the secure Robokassa page",
-      step3: "We confirm the order and ship it across Kazakhstan",
+      step1: "Build your cart",
+      step2: "Pay by card via Robokassa",
+      step3: "Delivery across Kazakhstan",
     },
   },
   lookbook: {
