@@ -46,9 +46,9 @@ export const infoPages: InfoPage[] = [
         h: t("Доставка по Алматы", "Алматы бойынша жеткізу", "Delivery in Almaty"),
         body: [
           t(
-            "По Алматы доставляем курьером день в день: заказ, оплаченный сегодня, привозим до 22:00. Стоимость по тарифу курьерской службы, сообщим при подтверждении заказа.",
-            "Алматы бойынша курьермен сол күні жеткіземіз: бүгін төленген тапсырысты 22:00-ге дейін алып барамыз. Құны курьерлік қызмет тарифі бойынша, тапсырысты растаған кезде хабарлаймыз.",
-            "In Almaty we deliver by courier the same day: an order paid today arrives by 22:00. The cost follows the courier service tariff and is confirmed with your order."
+            "По Алматы доставляем Яндекс-курьером день в день: заказ, оплаченный сегодня, привозим до 22:00. Стоимость по тарифу Яндекс Доставки, сообщим при подтверждении заказа.",
+            "Алматы бойынша Яндекс курьерімен сол күні жеткіземіз: бүгін төленген тапсырысты 22:00-ге дейін алып барамыз. Құны Яндекс Жеткізу тарифі бойынша, тапсырысты растаған кезде хабарлаймыз.",
+            "In Almaty we deliver via Yandex courier the same day: an order paid today arrives by 22:00. The cost follows the Yandex Delivery tariff and is confirmed with your order."
           ),
         ],
       },
