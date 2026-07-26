@@ -31,6 +31,7 @@ export interface CustomerInfo {
   email: string;
   city: string;
   address: string;
+  comment?: string;
 }
 
 export interface OrderItemSnapshot {
@@ -53,6 +54,7 @@ export interface Order {
   email: string;
   city: string;
   address: string;
+  comment: string | null;
   items: OrderItemSnapshot[];
   locale: Locale;
   paid_at: string | null;

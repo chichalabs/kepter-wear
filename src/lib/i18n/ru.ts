@@ -51,6 +51,8 @@ export const ru = {
     city: "Город",
     address: "Адрес доставки",
     addressHint: "Улица, дом, квартира",
+    comment: "Дополнительные инструкции",
+    optional: "необязательно",
     orderSummary: "Ваш заказ",
     total: "Итого",
     pay: "Перейти к оплате",

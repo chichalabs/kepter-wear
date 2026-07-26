@@ -53,6 +53,8 @@ export const kk: Dictionary = {
     city: "Қала",
     address: "Жеткізу мекенжайы",
     addressHint: "Көше, үй, пәтер",
+    comment: "Қосымша нұсқаулар",
+    optional: "міндетті емес",
     orderSummary: "Сіздің тапсырысыңыз",
     total: "Барлығы",
     pay: "Төлемге өту",

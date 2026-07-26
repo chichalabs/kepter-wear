@@ -10,7 +10,14 @@ const MAX_QTY = 10;
 
 interface OrderRequest {
   items: { productId: string; size: string; qty: number }[];
-  customer: { name: string; phone: string; email: string; city: string; address: string };
+  customer: {
+    name: string;
+    phone: string;
+    email: string;
+    city: string;
+    address: string;
+    comment?: string;
+  };
   locale: string;
 }
 
@@ -41,6 +48,11 @@ export async function POST(request: Request) {
       return badRequest(`invalid customer.${field}`);
     }
   }
+  // Optional free-text delivery instructions.
+  if (customer.comment !== undefined && typeof customer.comment !== "string") {
+    return badRequest("invalid customer.comment");
+  }
+  const comment = (customer.comment ?? "").trim().slice(0, 1000);
 
   // Recompute the amount from the catalog. Client prices are never trusted.
   const snapshots: OrderItemSnapshot[] = [];
@@ -80,6 +92,7 @@ export async function POST(request: Request) {
       email: customer.email.trim(),
       city: customer.city.trim(),
       address: customer.address.trim(),
+      comment: comment || null,
       items: snapshots,
       locale,
     })

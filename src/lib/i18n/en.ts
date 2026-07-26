@@ -53,6 +53,8 @@ export const en: Dictionary = {
     city: "City",
     address: "Delivery address",
     addressHint: "Street, building, apartment",
+    comment: "Additional instructions",
+    optional: "optional",
     orderSummary: "Your order",
     total: "Total",
     pay: "Proceed to payment",

@@ -12,6 +12,7 @@ create table if not exists orders (
   email         text not null,
   city          text not null,
   address       text not null,
+  comment       text,
   items         jsonb not null,
   locale        text not null default 'ru',
   paid_at       timestamptz,
