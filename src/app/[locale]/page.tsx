@@ -1,9 +1,6 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import {
-  BagSimple,
-  CreditCard,
-  ChatCircleText,
-} from "@phosphor-icons/react/dist/ssr";
+import { withBase } from "@/lib/img";
 import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { products } from "@/lib/products";
@@ -45,14 +42,22 @@ export default async function HomePage({
         <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
           {(
             [
-              [BagSimple, dict.home.info.step1],
-              [CreditCard, dict.home.info.step2],
-              [ChatCircleText, dict.home.info.step3],
+              ["/info/cart.jpg", dict.home.info.step1],
+              ["/info/payment.jpg", dict.home.info.step2],
+              ["/info/delivery.jpg", dict.home.info.step3],
             ] as const
-          ).map(([Icon, text]) => (
-            <div key={text} className="bg-ink-2 p-6 sm:p-8">
-              <Icon size={28} weight="regular" />
-              <p className="mt-4 max-w-[26ch] text-[16px] font-bold leading-snug">
+          ).map(([src, text]) => (
+            <div key={src} className="bg-ink-2">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={withBase(src)}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <p className="max-w-[30ch] px-6 pb-6 pt-5 text-[16px] font-bold leading-snug">
                 {text}
               </p>
             </div>
