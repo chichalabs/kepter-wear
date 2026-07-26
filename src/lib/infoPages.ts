@@ -43,17 +43,31 @@ export const infoPages: InfoPage[] = [
         ],
       },
       {
-        h: t("Доставка", "Жеткізу", "Delivery"),
+        h: t("Доставка по Алматы", "Алматы бойынша жеткізу", "Delivery in Almaty"),
         body: [
           t(
-            "Доставляем по всему Казахстану. Способы и сроки: [способ доставки, например Казпочта / курьерская служба], [срок, например 2-7 рабочих дней].",
-            "Қазақстан бойынша жеткіземіз. Тәсілдері мен мерзімдері: [жеткізу тәсілі, мысалы Қазпошта / курьерлік қызмет], [мерзімі, мысалы 2-7 жұмыс күні].",
-            "We deliver across Kazakhstan. Methods and timing: [delivery method, e.g. Kazpost / courier service], [timing, e.g. 2-7 business days]."
+            "По Алматы доставляем курьером день в день: заказ, оплаченный сегодня, привозим до 22:00. Стоимость: [сумма или «бесплатно»].",
+            "Алматы бойынша курьермен сол күні жеткіземіз: бүгін төленген тапсырысты 22:00-ге дейін алып барамыз. Құны: [сома немесе «тегін»].",
+            "In Almaty we deliver by courier the same day: an order paid today arrives by 22:00. Cost: [amount or “free”]."
+          ),
+        ],
+      },
+      {
+        h: t(
+          "Доставка по Казахстану",
+          "Қазақстан бойынша жеткізу",
+          "Delivery across Kazakhstan"
+        ),
+        body: [
+          t(
+            "По остальному Казахстану отправляем Казпочтой до отделения, почтомата или адреса. Сроки Казпочты: между городами 3-6 рабочих дней наземной доставкой, авиадоставка от 1 дня; в отдалённые населённые пункты дольше. После отправки пришлём трек-номер для отслеживания на post.kz.",
+            "Қазақстанның басқа өңірлеріне Қазпошта арқылы бөлімшеге, почтоматқа немесе мекенжайға жібереміз. Қазпошта мерзімдері: қалалар арасында жердегі жеткізумен 3-6 жұмыс күні, әуе жеткізуі 1 күннен басталады; шалғай елді мекендерге ұзағырақ. Жібергеннен кейін post.kz сайтында қадағалау үшін трек-нөмір жібереміз.",
+            "To the rest of Kazakhstan we ship via Kazpost to a post office, parcel locker or address. Kazpost timing: 3-6 business days between cities by ground, air delivery from 1 day; remote settlements take longer. After dispatch we send a tracking number for post.kz."
           ),
           t(
-            "Стоимость доставки: [сумма или «бесплатно от N тенге»]. Точную стоимость и срок подтвердим после оформления заказа.",
-            "Жеткізу құны: [сома немесе «N теңгеден бастап тегін»]. Нақты құны мен мерзімін тапсырыс рәсімделгеннен кейін растаймыз.",
-            "Delivery cost: [amount or “free over N tenge”]. We confirm the exact cost and timing after the order is placed."
+            "Стоимость доставки Казпочтой: [сумма или «по тарифам Казпочты» / «бесплатно от N тенге»].",
+            "Қазпошта жеткізу құны: [сома немесе «Қазпошта тарифтері бойынша» / «N теңгеден бастап тегін»].",
+            "Kazpost delivery cost: [amount or “per Kazpost tariffs” / “free over N tenge”]."
           ),
         ],
       },
@@ -64,21 +78,32 @@ export const infoPages: InfoPage[] = [
     title: t("Возврат и обмен", "Қайтару және айырбастау", "Returns & Exchange"),
     sections: [
       {
+        h: t("Обмен и возврат", "Айырбастау және қайтару", "Exchange & return"),
         body: [
           t(
-            "Вы можете обменять или вернуть товар надлежащего качества в течение 14 дней с момента получения, если вещь не носилась, сохранены её товарный вид и ярлыки.",
-            "Тауар киілмеген, тауарлық түрі мен жапсырмалары сақталған болса, сапалы тауарды алған күннен бастап 14 күн ішінде айырбастауға немесе қайтаруға болады.",
-            "You can exchange or return an item of proper quality within 14 days of receiving it, provided it is unworn and keeps its original condition and tags."
+            "Если вещь не подошла по размеру, фасону или расцветке, вы можете обменять или вернуть её в течение 14 дней с момента получения (ст. 14 и 25 Закона РК «О защите прав потребителей»). Вещь должна быть не ношена, без следов стирки, с сохранённым товарным видом и ярлыками.",
+            "Зат өлшемі, пішіні немесе түсі бойынша сай келмесе, оны алған күннен бастап 14 күн ішінде айырбастауға немесе қайтаруға болады (ҚР «Тұтынушылардың құқықтарын қорғау туралы» Заңының 14 және 25-баптары). Зат киілмеген, жуылмаған, тауарлық түрі мен жапсырмалары сақталған болуы керек.",
+            "If the size, cut or color did not suit you, you can exchange or return the item within 14 days of receiving it (articles 14 and 25 of the Consumer Rights Protection Law of Kazakhstan). The item must be unworn, unwashed, with its original condition and tags intact."
           ),
           t(
-            "Чтобы оформить возврат, напишите на hello@kepterwear.kz, укажите номер заказа и причину. Мы ответим с инструкцией по отправке.",
-            "Қайтаруды рәсімдеу үшін hello@kepterwear.kz поштасына тапсырыс нөмірі мен себебін көрсетіп жазыңыз. Біз жіберу нұсқаулығымен жауап береміз.",
-            "To arrange a return, email hello@kepterwear.kz with your order number and reason. We will reply with shipping instructions."
+            "Как оформить: напишите на hello@kepterwear.kz с номером заказа и причиной возврата. Мы ответим с инструкцией по отправке. Обратная пересылка при возврате товара надлежащего качества оплачивается покупателем; по Алматы вещь может забрать наш курьер.",
+            "Рәсімдеу тәртібі: hello@kepterwear.kz поштасына тапсырыс нөмірі мен қайтару себебін жазыңыз. Біз жіберу нұсқаулығымен жауап береміз. Сапалы тауарды қайтарғанда кері жіберуді сатып алушы төлейді; Алматы бойынша затты біздің курьер алып кете алады.",
+            "How it works: email hello@kepterwear.kz with your order number and the reason. We reply with shipping instructions. For returns of items of proper quality, return shipping is paid by the buyer; in Almaty our courier can pick the item up."
           ),
           t(
-            "Деньги возвращаются на карту, с которой был оплачен заказ, в течение [N] рабочих дней после того, как мы получим товар. Расходы на обратную пересылку: [за счёт покупателя / за наш счёт].",
-            "Ақша тауар бізге жеткеннен кейін [N] жұмыс күні ішінде тапсырыс төленген картаға қайтарылады. Кері жіберу шығындары: [сатып алушы есебінен / біздің есебімізден].",
-            "Refunds go back to the card used for payment within [N] business days after we receive the item. Return shipping costs: [paid by the buyer / covered by us]."
+            "Деньги возвращаются на карту, с которой был оплачен заказ, в течение 3 рабочих дней после того, как мы получим и проверим вещь.",
+            "Ақша затты алып, тексергеннен кейін 3 жұмыс күні ішінде тапсырыс төленген картаға қайтарылады.",
+            "Refunds go back to the card used for payment within 3 business days after we receive and check the item."
+          ),
+        ],
+      },
+      {
+        h: t("Брак", "Ақау", "Defects"),
+        body: [
+          t(
+            "Если пришла вещь с браком или не тот товар, напишите нам с фото в течение 14 дней. Обмен или полный возврат, включая стоимость пересылки в обе стороны, за наш счёт.",
+            "Ақаулы немесе басқа тауар келсе, 14 күн ішінде фотосымен бізге жазыңыз. Айырбастау немесе толық қайтару, екі бағыттағы жіберу құнын қоса, біздің есебімізден.",
+            "If the item arrived defective or wrong, email us with photos within 14 days. Exchange or full refund, including shipping both ways, is on us."
           ),
         ],
       },
