@@ -15,6 +15,12 @@ export const en: Dictionary = {
   home: {
     collection: "Kepter '26",
     seeAll: "See All",
+    info: {
+      title: "How to order",
+      step1: "Add the tee you want to the cart and fill in the form",
+      step2: "Pay for your order via Robokassa",
+      step3: "Our manager will contact you between 11:00 and 22:00",
+    },
   },
   lookbook: {
     title: "Lookbook",

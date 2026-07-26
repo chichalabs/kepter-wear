@@ -1,4 +1,9 @@
 import { notFound } from "next/navigation";
+import {
+  BagSimple,
+  CreditCard,
+  ChatCircleText,
+} from "@phosphor-icons/react/dist/ssr";
 import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { products } from "@/lib/products";
@@ -28,6 +33,29 @@ export default async function HomePage({
         <div className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-4">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} locale={locale} />
+          ))}
+        </div>
+      </section>
+
+      {/* Buyer info: the three-step order flow */}
+      <section className="mx-auto max-w-[1400px] px-4 pt-14 sm:px-6">
+        <h2 className="text-[13px] font-bold uppercase leading-[18px] tracking-[0.1em]">
+          {dict.home.info.title}
+        </h2>
+        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {(
+            [
+              [BagSimple, dict.home.info.step1],
+              [CreditCard, dict.home.info.step2],
+              [ChatCircleText, dict.home.info.step3],
+            ] as const
+          ).map(([Icon, text]) => (
+            <div key={text} className="bg-ink-2 p-6 sm:p-8">
+              <Icon size={28} weight="regular" />
+              <p className="mt-4 max-w-[26ch] text-[16px] font-bold leading-snug">
+                {text}
+              </p>
+            </div>
           ))}
         </div>
       </section>
