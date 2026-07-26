@@ -18,6 +18,7 @@ interface OrderRequest {
     address: string;
     comment?: string;
   };
+  delivery: string;
   locale: string;
 }
 
@@ -33,7 +34,7 @@ export async function POST(request: Request) {
     return badRequest("invalid json");
   }
 
-  const { items, customer, locale: rawLocale } = body ?? {};
+  const { items, customer, delivery, locale: rawLocale } = body ?? {};
   const locale = typeof rawLocale === "string" && isLocale(rawLocale) ? rawLocale : "ru";
 
   if (!Array.isArray(items) || items.length === 0 || items.length > 50) {
@@ -53,6 +54,9 @@ export async function POST(request: Request) {
     return badRequest("invalid customer.comment");
   }
   const comment = (customer.comment ?? "").trim().slice(0, 1000);
+  if (delivery !== "courier" && delivery !== "kazpost") {
+    return badRequest("invalid delivery");
+  }
 
   // Recompute the amount from the catalog. Client prices are never trusted.
   const snapshots: OrderItemSnapshot[] = [];
@@ -93,6 +97,7 @@ export async function POST(request: Request) {
       city: customer.city.trim(),
       address: customer.address.trim(),
       comment: comment || null,
+      delivery_method: delivery,
       items: snapshots,
       locale,
     })

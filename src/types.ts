@@ -55,6 +55,7 @@ export interface Order {
   city: string;
   address: string;
   comment: string | null;
+  delivery_method: "courier" | "kazpost";
   items: OrderItemSnapshot[];
   locale: Locale;
   paid_at: string | null;

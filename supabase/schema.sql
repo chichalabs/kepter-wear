@@ -13,6 +13,8 @@ create table if not exists orders (
   city          text not null,
   address       text not null,
   comment       text,
+  delivery_method text not null default 'kazpost'
+                check (delivery_method in ('courier', 'kazpost')),
   items         jsonb not null,
   locale        text not null default 'ru',
   paid_at       timestamptz,

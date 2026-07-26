@@ -36,6 +36,7 @@ function formatPhone(raw: string): string {
 export function CheckoutForm({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const { items, hydrated, total } = useCart();
   const [form, setForm] = useState(initialForm);
+  const [delivery, setDelivery] = useState<"courier" | "kazpost">("courier");
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -88,6 +89,7 @@ export function CheckoutForm({ locale, dict }: { locale: Locale; dict: Dictionar
         body: JSON.stringify({
           items,
           customer: { ...form, comment: comment.trim() },
+          delivery,
           locale,
         }),
       });
@@ -123,6 +125,42 @@ export function CheckoutForm({ locale, dict }: { locale: Locale; dict: Dictionar
         <h2 className="font-display text-lg font-semibold uppercase tracking-wide">
           {dict.checkout.contactInfo}
         </h2>
+        <div
+          className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2"
+          role="radiogroup"
+          aria-label={dict.checkout.deliveryMethod}
+        >
+          {(
+            [
+              [
+                "courier",
+                dict.checkout.deliveryCourier,
+                dict.checkout.deliveryCourierHint,
+              ],
+              [
+                "kazpost",
+                dict.checkout.deliveryKazpost,
+                dict.checkout.deliveryKazpostHint,
+              ],
+            ] as const
+          ).map(([value, label, hint]) => (
+            <button
+              key={value}
+              type="button"
+              role="radio"
+              aria-checked={delivery === value}
+              onClick={() => setDelivery(value)}
+              className={`border-2 px-4 py-3.5 text-left transition-colors ${
+                delivery === value
+                  ? "border-bone"
+                  : "border-line hover:border-muted"
+              }`}
+            >
+              <span className="block text-sm font-bold">{label}</span>
+              <span className="mt-1 block text-xs text-muted">{hint}</span>
+            </button>
+          ))}
+        </div>
         <div className="mt-5 flex flex-col gap-5">
           {fields.map(({ key, label, type, hint, autoComplete }) => (
             <div key={key} className="flex flex-col gap-2">
