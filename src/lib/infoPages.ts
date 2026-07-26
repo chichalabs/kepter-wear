@@ -46,9 +46,9 @@ export const infoPages: InfoPage[] = [
         h: t("Доставка по Алматы", "Алматы бойынша жеткізу", "Delivery in Almaty"),
         body: [
           t(
-            "По Алматы доставляем курьером день в день: заказ, оплаченный сегодня, привозим до 22:00. Стоимость: [сумма или «бесплатно»].",
-            "Алматы бойынша курьермен сол күні жеткіземіз: бүгін төленген тапсырысты 22:00-ге дейін алып барамыз. Құны: [сома немесе «тегін»].",
-            "In Almaty we deliver by courier the same day: an order paid today arrives by 22:00. Cost: [amount or “free”]."
+            "По Алматы доставляем курьером день в день: заказ, оплаченный сегодня, привозим до 22:00. Стоимость по тарифу курьерской службы, сообщим при подтверждении заказа.",
+            "Алматы бойынша курьермен сол күні жеткіземіз: бүгін төленген тапсырысты 22:00-ге дейін алып барамыз. Құны курьерлік қызмет тарифі бойынша, тапсырысты растаған кезде хабарлаймыз.",
+            "In Almaty we deliver by courier the same day: an order paid today arrives by 22:00. The cost follows the courier service tariff and is confirmed with your order."
           ),
         ],
       },
@@ -65,9 +65,9 @@ export const infoPages: InfoPage[] = [
             "To the rest of Kazakhstan we ship via Kazpost to a post office, parcel locker or address. Kazpost timing: 3-6 business days between cities by ground, air delivery from 1 day; remote settlements take longer. After dispatch we send a tracking number for post.kz."
           ),
           t(
-            "Стоимость доставки Казпочтой: [сумма или «по тарифам Казпочты» / «бесплатно от N тенге»].",
-            "Қазпошта жеткізу құны: [сома немесе «Қазпошта тарифтері бойынша» / «N теңгеден бастап тегін»].",
-            "Kazpost delivery cost: [amount or “per Kazpost tariffs” / “free over N tenge”]."
+            "Стоимость доставки — по тарифам Казпочты: зависит от веса посылки, города и способа получения. Ориентировочную сумму можно посчитать в калькуляторе на post.kz, точную сообщим при подтверждении заказа.",
+            "Жеткізу құны — Қазпошта тарифтері бойынша: сәлемдеменің салмағына, қалаға және алу тәсіліне байланысты. Болжалды соманы post.kz сайтындағы калькулятормен есептеуге болады, нақтысын тапсырысты растаған кезде хабарлаймыз.",
+            "Delivery cost follows Kazpost tariffs: it depends on parcel weight, city and pickup method. You can estimate it with the calculator on post.kz; we confirm the exact amount with your order."
           ),
         ],
       },
