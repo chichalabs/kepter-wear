@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
+import { withBase } from "@/lib/img";
 import type { Locale } from "@/types";
 import type { Dictionary } from "@/lib/i18n/types";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -34,10 +36,15 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <div className="sticky top-0 z-40 bg-ink">
         <div className="mx-auto flex h-[58px] max-w-[1400px] items-center justify-between px-4 sm:h-[76px] sm:px-6">
           <div className="flex items-center gap-4 sm:gap-8">
-            <Link href={`/${locale}`} className="block">
-              <span className="text-[26px] font-black lowercase leading-none tracking-[-0.03em] sm:text-[36px]">
-                kepter
-              </span>
+            <Link href={`/${locale}`} className="block shrink-0">
+              <Image
+                src={withBase("/logo.png")}
+                alt="Kepter"
+                width={1280}
+                height={538}
+                priority
+                className="h-[30px] w-auto sm:h-[40px]"
+              />
             </Link>
             <nav className="flex items-center text-[14px] font-bold uppercase tracking-[0.01em]">
               <Link
