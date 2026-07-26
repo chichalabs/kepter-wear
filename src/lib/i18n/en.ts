@@ -35,6 +35,7 @@ export const en: Dictionary = {
     addToCart: "Add to cart",
     added: "Added",
     inCart: "In cart",
+    sizeChart: "Size chart",
     front: "Front",
     back: "Back",
     notFound: "Product not found",

@@ -33,6 +33,7 @@ export const ru = {
     addToCart: "В корзину",
     added: "Добавлено",
     inCart: "В корзине",
+    sizeChart: "Таблица размеров",
     front: "Спереди",
     back: "Сзади",
     notFound: "Товар не найден",

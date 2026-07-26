@@ -35,6 +35,7 @@ export const kk: Dictionary = {
     addToCart: "Себетке салу",
     added: "Салынды",
     inCart: "Себетте",
+    sizeChart: "Өлшемдер кестесі",
     front: "Алды",
     back: "Арты",
     notFound: "Тауар табылмады",

@@ -72,6 +72,12 @@ export default async function ProductPage({
               addedLabel={dict.product.added}
               inCartLabel={dict.product.inCart}
             />
+            <Link
+              href={`/${locale}/info/sizes`}
+              className="mt-5 inline-block text-sm text-muted underline decoration-line underline-offset-4 hover:text-bone"
+            >
+              {dict.product.sizeChart}
+            </Link>
           </div>
         </div>
       </div>
