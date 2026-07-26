@@ -20,6 +20,7 @@ export const products: Product[] = [
     price: 14900,
     images: [
       "/products/kese-front.jpg",
+      "/products/kese-model.jpg",
       "/products/kese-back.jpg",
       "/products/kese-detail.jpg",
     ],
@@ -34,7 +35,8 @@ export const products: Product[] = [
       en: "White oversized tee with the Upgrade collage: MPC, gamepad, ornaments, punching bag.",
     },
     price: 14900,
-    images: ["/products/upgrade-front.jpg", "/products/upgrade-detail.jpg"],
+    images: ["/products/upgrade-front.jpg",
+      "/products/upgrade-model.jpg", "/products/upgrade-detail.jpg"],
   },
   {
     id: "instructions",
@@ -48,6 +50,7 @@ export const products: Product[] = [
     price: 14900,
     images: [
       "/products/instructions-front.jpg",
+      "/products/instructions-model.jpg",
       "/products/instructions-detail.jpg",
     ],
   },
@@ -63,6 +66,7 @@ export const products: Product[] = [
     price: 14900,
     images: [
       "/products/bauyrsaq-front.jpg",
+      "/products/bauyrsaq-model.jpg",
       "/products/bauyrsaq-back.jpg",
       "/products/bauyrsaq-detail.jpg",
     ],
@@ -79,6 +83,7 @@ export const products: Product[] = [
     price: 14900,
     images: [
       "/products/apa-front.jpg",
+      "/products/apa-model.jpg",
       "/products/apa-back.jpg",
       "/products/apa-detail.jpg",
     ],
@@ -95,6 +100,7 @@ export const products: Product[] = [
     price: 14900,
     images: [
       "/products/chocolate-front.jpg",
+      "/products/chocolate-model.jpg",
       "/products/chocolate-back.jpg",
       "/products/chocolate-detail.jpg",
     ],
@@ -111,6 +117,7 @@ export const products: Product[] = [
     price: 14900,
     images: [
       "/products/liberty-front.jpg",
+      "/products/liberty-model.jpg",
       "/products/liberty-back.jpg",
       "/products/liberty-detail.jpg",
     ],
@@ -127,6 +134,7 @@ export const products: Product[] = [
     price: 14900,
     images: [
       "/products/pez-front.jpg",
+      "/products/pez-model.jpg",
       "/products/pez-back.jpg",
       "/products/pez-detail.jpg",
       "/products/pez-detail-back.jpg",
